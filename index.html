@@ -1,0 +1,110 @@
+<html>
+  <head>
+    <title>ShellCheck &ndash; shell script analysis tool</title>
+    <link rel="stylesheet" type="text/css" href="shellcheck.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="shellcheck.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  </head>
+  <body>
+
+<div id="demo" style="display: none">#!/bin/sh
+## Example of a broken script. Hit the Down Arrow button to ShellCheck it!
+for f in $(ls *.m3u)
+do
+  grep -qi hq.*mp3 $f \
+    &amp;&amp; echo -e 'Playlist $f contains a HQ file in mp3 format' 
+done
+</div>
+
+    <div id="header">
+      <div id="shellcheck">
+      </div>
+      <div id="github">
+        <a href="https://github.com/koalaman/shellcheck">
+          <img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Logo.png" style="height: 1.5ex" alt="GitHub" /> ➯
+        </a>
+      </div>
+    </div>
+
+    <div class="intro" style="display: none">
+      <div class="banner">
+        <div class="logo"> 
+          <h1>ShellCheck</h1><br />
+          finds&nbsp;bugs in your shell&nbsp;scripts.
+        </div>
+      </div>
+    </div>
+    <div class="contents">
+      <div class="contentpart">
+          <h1>ShellCheck</h1><br />
+          finds&nbsp;bugs in your shell&nbsp;scripts.
+      </div>
+
+      <div class="contentpart">
+        You can <code>cabal</code>, <code>apt-get</code>, <code>yum</code> or <code>brew&nbsp;install</code> it right&nbsp;now.
+      </div>
+
+      <div class="contentpart">
+        Paste a script to see what it will be like:
+      </div>
+
+      <div class="contentpart">
+        <div class="window">
+          <div id="titlebar">
+            <div class="titleitem">&#x1f4c4;</div>
+            <div class="titleitem mainitem">Your Editor (<a href="https://github.com/ajaxorg/ace">Ace</a>)</div>
+            <div class="titleitem">&#x2B59;</div>
+          </div>
+          <div class="windowbody">
+            <div class="menubar">
+              <a href="#" onclick="editor.setValue($('#demo').text(), 1);">Load an example</a> <br />
+            </div>
+            <pre id="input"></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="contentpart">
+        <div class="window">
+          <div id="titlebar">
+            <div class="titleitem">&#x1f4c4;</div>
+            <div class="titleitem mainitem">Your Terminal</div>
+            <div class="titleitem">&#x2B59;</div>
+          </div>
+          <div class="windowbody">
+            <div id="terminal">
+              If you paste a script in the editor above, this window will show shellcheck output.
+            </div>
+          </div>
+        </div>
+      </div>
+
+<script src="libace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("input");
+    editor.session.setMode("ace/mode/sh");
+    editor.onChangeAnnotation(function(data) {
+      console.log("shit");
+      console.log(data);
+    });
+</script>
+
+      <div class="contentpart">
+        <h2>ShellCheck is...</h2>
+        <div class="benefitblock">
+          <ul>
+            <li><a href="https://github.com/koalaman/shellcheck/blob/master/LICENSE">GPLv3</a>: free as in freedom</li>
+            <li>available on <a href="https://github.com/koalaman/shellcheck">GitHub</a></li>
+            <li>already packaged for your <a href="https://github.com/koalaman/shellcheck#user-content-installing">distro or package&nbsp;manager</a> </li>
+            <li>supported as an <a href="https://github.com/koalaman/shellcheck#user-content-in-your-editor">integrated linter</a> in major&nbsp;editors</li>
+            <li>usable in CI&nbsp;systems, pre-commits and test&nbsp;suites.</li>
+            <li>written in Haskell, if you're into that sort&nbsp;of&nbsp;thing.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="contentpart">
+        Sounds awesome? <a href="https://github.com/koalaman/shellcheck">Read more about it</a> on the <a href="https://github.com/koalaman/shellcheck">GitHub page</a>!
+    </div>
+  </body>
+</html>
