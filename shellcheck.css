@@ -115,7 +115,7 @@ h2 {
   width: 100%;
   background-color: #000;
   font-size: 70%;
-  color: #A0A0A0;
+  color: #C0C0C0;
   text-align: left;
   margin: 0;
   font-family: "Consolas", "Courier New", "Monospace";
@@ -136,6 +136,11 @@ h2 {
 }
 
 a.wikilink {
+  color: #8080FF;
+  text-decoration: underline;
+}
+
+a.linelink {
   color: #8080FF;
   text-decoration: underline;
 }

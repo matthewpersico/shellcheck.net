@@ -23,6 +23,12 @@ function getLink(code) {
     .attr("class", "wikilink")
     .text("SC" + code);
 }
+function getLineLink(line, column) {
+    return $("<a />")
+        .attr("href", "javascript:setPosition(" + line + ", " + column + ")")
+        .attr("class", "linelink")
+        .text("Line " + line + ":");
+}
 
 function formatError(err) {
   var nodes = [];
@@ -41,8 +47,6 @@ function formatError(err) {
 }
 
 function createTerminal(code, errors) {
-  console.log(code);
-  console.log(errors);
   var node = $("<div />");
   // Sort by line, then by column.
   errors.sort(function(a,b) {
@@ -59,10 +63,12 @@ function createTerminal(code, errors) {
   } else {
     var last = -1;
     for (var i=0; i < errors.length; i++) {
-      // For the first message of the line, print the line
+      // For the first message of the line, print the line number and line
       if (errors[i].line != last) {
         last = errors[i].line;
         node.append("&nbsp;<br />");
+        node.append(getLineLink(errors[i].line, errors[i].column));
+        node.append("<br />");
         var line = lines[errors[i].line - 1];
         if ( ! line ) {
           line = "";
@@ -84,4 +90,9 @@ function createTerminal(code, errors) {
 
 function setTerminal(code, errors) {
   $("#terminal").html("").append(createTerminal(code, errors));
+}
+
+
+function setPosition(line, column) {
+  editor.gotoLine(line, column - 1);
 }
