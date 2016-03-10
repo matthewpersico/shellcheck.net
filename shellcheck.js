@@ -92,9 +92,14 @@ function setTerminal(code, errors) {
   $("#terminal").html("").append(createTerminal(code, errors));
 }
 
-
 function setPosition(line, column) {
+  var min = 40;
   editor.gotoLine(line, column - 1);
+  var position = editor.renderer.textToScreenCoordinates(line, column - 1).pageY;
+  if ( position < min) {
+    document.body.scrollTop += position - min;
+  }
+  editor.focus();
 }
 function maximize() {
   var selector = "#editorwindow";
