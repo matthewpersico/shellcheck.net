@@ -68,6 +68,7 @@ function createTerminal(code, errors) {
           line = "";
         }
         line = line.replace(/\t/g, "    ");
+        line = line.replace(/^ /, "\u00A0");
         line = line.replace(/  /g, " \u00A0");
         node.append(document.createTextNode(line)).append("<br />");
       }
