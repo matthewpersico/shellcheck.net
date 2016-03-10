@@ -92,6 +92,7 @@ done
     $(document).ready(function() {
       $("#editorwindow").resizable({
         start: function(a,b) { $(this).css( {"max-width": "100%" }); },
+        resize: function(a,b) { editor.resize(); },
         minWidth: 200,
         minHeight: 50,
       });

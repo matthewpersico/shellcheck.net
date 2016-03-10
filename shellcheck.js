@@ -105,10 +105,12 @@ function maximize() {
   $(selector).css( { "max-width": "100%" });
   $(selector).height($(selector).height() * 1.5);
   $("#terminalwindow").css( { "max-width": "100%" });
+  editor.resize();
 }
 function minimize() {
   var selector = "#editorwindow";
   if ($(selector).height() > 50) {
     $(selector).height($(selector).height() * 0.5);
   }
+  editor.resize();
 }
