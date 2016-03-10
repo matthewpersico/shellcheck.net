@@ -96,3 +96,15 @@ function setTerminal(code, errors) {
 function setPosition(line, column) {
   editor.gotoLine(line, column - 1);
 }
+function maximize() {
+  var selector = "#editorwindow";
+  $(selector).css( { "max-width": "100%" });
+  $(selector).height($(selector).height() * 1.5);
+  $("#terminalwindow").css( { "max-width": "100%" });
+}
+function minimize() {
+  var selector = "#editorwindow";
+  if ($(selector).height() > 50) {
+    $(selector).height($(selector).height() * 0.5);
+  }
+}
