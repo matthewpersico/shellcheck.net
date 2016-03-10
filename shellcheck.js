@@ -5,7 +5,6 @@ function shellcheckCode(code, callback) {
     $.post("shellcheck.php",
         { "script": code },
         function (data) {
-          console.log(data);
           callback(data);
         }, 'json');
   } else {
