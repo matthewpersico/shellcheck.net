@@ -5,6 +5,10 @@ var lastCheck = 0;
 
 function shellcheckCode(code, callback) {
   lastChange = lastCheck;
+  if (lastChange == 0 && code == "") {
+    return;
+  }
+
   if (window.jQuery) {
     $.post("shellcheck.php",
         { "script": code },
