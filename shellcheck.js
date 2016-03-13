@@ -1,6 +1,10 @@
 /* I don't actually know Javascript :( */
 
+var lastChange = 0;
+var lastCheck = 0;
+
 function shellcheckCode(code, callback) {
+  lastChange = lastCheck;
   if (window.jQuery) {
     $.post("shellcheck.php",
         { "script": code },
@@ -89,6 +93,9 @@ function createTerminal(code, errors) {
 
 function setTerminal(code, errors) {
   $("#terminal").html("").append(createTerminal(code, errors));
+  if (lastChange == lastCheck) {
+    $("#processingindicator").text("");
+  }
 }
 
 function setPosition(line, column) {
@@ -113,4 +120,9 @@ function minimize() {
     $(selector).height($(selector).height() * 0.5);
   }
   editor.resize();
+}
+
+function editorChangeHandler(obj) {
+  lastChange++;
+  $("#processingindicator").text(" (updating)");
 }
