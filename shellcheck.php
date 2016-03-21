@@ -20,4 +20,3 @@ if(is_resource($process)) {
 } else { 
   echo "[{ 'line': 1, 'column': 1, 'level': 'error', 'message': 'Oops, internal server error unrelated to your script! Sorry!'}]";
 }
-?>
