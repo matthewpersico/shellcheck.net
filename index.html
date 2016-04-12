@@ -119,6 +119,7 @@ done
     <script>
       var editor = ace.edit("input");
       editor.session.setMode("ace/mode/sh");
+      editor.session.setOptions({"tabSize": 8});
       editor.on("change", editorChangeHandler);
     </script>
   </body>
