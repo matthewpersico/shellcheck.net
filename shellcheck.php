@@ -5,6 +5,11 @@
 
 header('Content-type: application/json; charset=UTF-8');
 
+$script = $_POST["script"];
+if (get_magic_quotes_gpc()) {
+    $script = stripslashes($script);
+}
+
 $fds = array( 
     0 => array("pipe", "r"), 
     1 => array("pipe", "w"),
@@ -12,7 +17,7 @@ $fds = array(
 
 $process = proc_open("exec ./shellcheck.sh", $fds, $pipes);
 if(is_resource($process)) {
-  fwrite($pipes[0], $_POST["script"]);
+  fwrite($pipes[0], $script);
   fclose($pipes[0]);
   echo stream_get_contents($pipes[1]);
   fclose($pipes[1]);
