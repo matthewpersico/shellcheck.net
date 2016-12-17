@@ -113,6 +113,7 @@ h2 {
   padding: 4px;
 }
 .menubar {
+  display: flex;
   text-align: left;
 }
 #input {

@@ -63,7 +63,9 @@ done
           </div>
           <div class="windowbody">
             <div class="menubar">
-              <a href="#" onclick="editor.setValue($('#demo').text(), 1);">Load an example</a> <br />
+              <a class="titleitem" href="#" onclick="editor.setValue($('#demo').text(), 1);">Load an example</a>
+              <div class="titleitem mainitem"></div>
+              <div class="titleitem"><textarea id="pastehack" type="text" rows=1 cols=2 style="vertical-align: middle; display:inline; "></textarea><a href="javascript:alert('Are you on mobile and unable to paste in the editor? Paste in this plaintext box to have it copied over.')">(?)</a></div><br />
             </div>
             <pre id="input"></pre>
           </div>
@@ -96,6 +98,14 @@ done
         minHeight: 50,
       });
       $("#downloadingindicator").text("");
+
+      $("#pastehack").on("change paste keyup", function() {
+        if ( $("#pastehack").val() != "") {
+          editor.setValue($("#pastehack").val());
+          $("#pastehack").val("");
+        }
+      });
+
     });
 </script>
 
