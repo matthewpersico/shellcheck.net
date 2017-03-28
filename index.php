@@ -3,6 +3,8 @@
     <title>ShellCheck &ndash; shell script analysis tool</title>
     <link rel="stylesheet" type="text/css" href="shellcheck.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:image" content="shellcheck.png" />
+    <meta property="og:description" content="ShellCheck finds bugs in your shell scripts" />
     <script src="shellcheck.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
@@ -10,6 +12,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
   </head>
   <body>
+
+<?php
+  // Content to prepopulate the editor with
+  $content = "";
+
+  if ( isset($_GET["id"]) ) {
+    $file = preg_replace("/[^a-zA-Z0-9]+/", "", $_GET["id"]);
+    if ($file != "") {
+      $content = file_get_contents("./data/$file");
+    }
+  }
+?>
 
 <div id="demo" style="display: none">#!/bin/sh
 ## Example of a broken script.
@@ -67,7 +81,7 @@ done
               <div class="titleitem mainitem"></div>
               <div class="titleitem"><textarea id="pastehack" type="text" rows=1 cols=2 style="vertical-align: middle; display:inline; "></textarea><a href="javascript:alert('Are you on mobile and unable to paste in the editor? Paste in this plaintext box to have it copied over.')">(?)</a></div><br />
             </div>
-            <pre id="input"></pre>
+            <pre id="input"><?php echo htmlentities($content) ?></pre>
           </div>
         </div>
       </div>
@@ -89,26 +103,6 @@ done
         </div>
       </div>
 
-<script>
-    $(document).ready(function() {
-      $("#editorwindow").resizable({
-        start: function(a,b) { $(this).css( {"max-width": "100%" }); },
-        resize: function(a,b) { editor.resize(); },
-        minWidth: 200,
-        minHeight: 50,
-      });
-      $("#downloadingindicator").text("");
-
-      $("#pastehack").on("change paste keyup", function() {
-        if ( $("#pastehack").val() != "") {
-          editor.setValue($("#pastehack").val());
-          $("#pastehack").val("");
-        }
-      });
-
-    });
-</script>
-
       <div class="contentpart">
         <h2>ShellCheck is...</h2>
         <div class="benefitblock">
@@ -124,6 +118,7 @@ done
       </div>
       <div class="contentpart">
         Sounds awesome? <a href="https://github.com/koalaman/shellcheck">Read more about it</a> on the <a href="https://github.com/koalaman/shellcheck">GitHub page</a>!
+      </div>
     </div>
     <script src="libace/ace.js" type="text/javascript" charset="utf-8"></script>
     <script>
@@ -132,6 +127,24 @@ done
       editor.session.setOptions({"tabSize": 8});
       editor.setFontSize(12);
       editor.on("change", editorChangeHandler);
+
+      $(document).ready(function() {
+        $("#editorwindow").resizable({
+          start: function(a,b) { $(this).css( {"max-width": "100%" }); },
+          resize: function(a,b) { editor.resize(); },
+          minWidth: 200,
+          minHeight: 50,
+        });
+        $("#downloadingindicator").text("");
+
+        $("#pastehack").on("change paste keyup", function() {
+          if ( $("#pastehack").val() != "") {
+            editor.setValue($("#pastehack").val());
+            $("#pastehack").val("");
+          }
+        });
+      });
     </script>
+
   </body>
 </html>
