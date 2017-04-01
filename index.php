@@ -91,7 +91,7 @@ done
           <div id="titlebar">
             <div class="titleitem">&#x1f4c4;</div>
             <div class="titleitem mainitem">
-              Your Terminal
+              ShellCheck Output
               <span id="processingindicator"></span>
             </div>
           </div>
