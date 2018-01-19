@@ -133,6 +133,7 @@ h2 {
   margin: 0;
   font-family: "Consolas", "Courier New", "Monospace";
   padding: 0.5em;
+  overflow-x: scroll;
 }
 
 .error {
@@ -146,6 +147,12 @@ h2 {
 }
 .style {
   color: #20FF20;
+}
+.pointer {
+  white-space: nowrap;
+}
+.sourceline {
+  white-space: nowrap;
 }
 
 a.wikilink {

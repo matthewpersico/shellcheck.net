@@ -39,9 +39,14 @@ function getLineLink(line, column) {
 
 function formatError(err) {
   var nodes = [];
-  var tag=$("<span />");
   var header="";
-  for(var i=1; i<err.column; i++) {
+
+  var i=1;
+  if (err.column >= 60) {
+    header += ">>";
+    i += header.length;
+  }
+  for(; i<err.column; i++) {
     header += "&nbsp;"
   }
   header += "^-- ";
@@ -50,17 +55,24 @@ function formatError(err) {
   nodes.push(getLink(err.code));
   nodes.push(document.createTextNode(": "));
   nodes.push($("<span />").text(err.message));
-  return $("<span />").attr("class", err.level).append(nodes);
+  return $("<span />")
+      .addClass(err.level)
+      .addClass("pointer")
+      .append(nodes);
+}
+
+function sortKey() {
+  for(var i in arguments) {
+    if (arguments[i] != 0)
+      return arguments[i];
+  }
+  return 0;
 }
 
 function createTerminal(code, errors) {
   var node = $("<div />");
-  // Sort by line, then by column.
   errors.sort(function(a,b) {
-    return a.column - b.column;
-  });
-  errors.sort(function(a,b) {
-    return a.line - b.line;
+    return sortKey(a.line - b.line, a.column - b.column)
   });
 
   var lines = code.split("\n");
@@ -83,7 +95,10 @@ function createTerminal(code, errors) {
         line = line.replace(/\t/g, "        ");
         line = line.replace(/^ /, "\u00A0");
         line = line.replace(/  /g, " \u00A0");
-        node.append(document.createTextNode(line)).append("<br />");
+        var lineElem = $("<span />")
+            .addClass("sourceline")
+            .append(document.createTextNode(line));
+        node.append(lineElem).append("<br />");
       }
       // Then 1+ errors
       node.append(formatError(errors[i])).append("<br />");
