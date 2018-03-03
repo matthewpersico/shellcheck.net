@@ -6,6 +6,7 @@
     <meta property="og:image" content="shellcheck.png" />
     <meta property="og:description" content="ShellCheck finds bugs in your shell scripts" />
     <meta name="description" content="ShellCheck is an open source static anaylsis tool that automatically finds bugs in your shell scripts." />
+    <script src="bugreport.js"></script>
     <script src="shellcheck.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
@@ -80,7 +81,10 @@ done
             <div class="menubar">
               <a class="titleitem" href="#" onclick="editor.setValue($('#demo').text(), 1);">Load an example</a>
               <div class="titleitem mainitem"></div>
-              <div class="titleitem"><textarea id="pastehack" type="text" rows=1 cols=2 style="vertical-align: middle; display:inline; "></textarea><a href="javascript:alert('Are you on mobile and unable to paste in the editor? Paste in this plaintext box to have it copied over.')">(?)</a></div><br />
+              <a class="titleitem miniitem" href="javascript:reportBug()">Report bug</a>
+              <span class="titleitem spaceitem"></span>
+              <a class="titleitem miniitem" href="javascript:alert('Are you on mobile and unable to paste in the editor? Paste in this plaintext box to have it copied over.')">Mobile paste:</a>
+              <div class="titleitem"><textarea id="pastehack" type="text" rows=1 cols=2 style="vertical-align: middle; display:inline; "></textarea></div><br />
             </div>
             <pre id="input"><?php echo htmlentities($content) ?></pre>
           </div>

@@ -2,6 +2,8 @@
 
 var lastChange = 0;
 var lastCheck = 0;
+var lastCode = "";
+var lastErrors = [];
 
 function shellcheckCode(code, callback) {
   lastChange = lastCheck;
@@ -113,6 +115,8 @@ function createTerminal(code, errors) {
 function setTerminal(code, errors) {
   $("#terminal").html("").append(createTerminal(code, errors));
   if (lastChange == lastCheck) {
+    lastCode = code;
+    lastErrors = errors;
     $("#processingindicator").text("");
   }
 }
@@ -144,4 +148,8 @@ function minimize() {
 function editorChangeHandler(obj) {
   lastChange++;
   $("#processingindicator").text(" (updating)");
+}
+
+function reportBug() {
+  window.open(makeReportUrl(lastCode, lastErrors));
 }

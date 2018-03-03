@@ -95,6 +95,12 @@ h2 {
   display: inline-block;
   text-align: center;
 }
+.miniitem {
+  font-size: 70%
+}
+.spaceitem {
+  margin-left: 1em
+}
 .windowbody {
   flex-grow: 1;
   display: flex;
@@ -115,6 +121,7 @@ h2 {
 .menubar {
   display: flex;
   text-align: left;
+  vertical-align: bottom;
 }
 #input {
   width: 100%;
