@@ -61,7 +61,7 @@ done
       </div>
 
       <div class="contentpart">
-        You can <code>cabal</code>, <code>apt-get</code>, <code>yum</code> or <code>brew&nbsp;install</code> it locally right&nbsp;now.
+        You can <code>cabal</code>, <code>apt</code>, <code>dnf</code> or <code>brew&nbsp;install</code> it locally right&nbsp;now.
       </div>
 
       <div class="contentpart">
