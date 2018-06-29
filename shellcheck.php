@@ -3,6 +3,10 @@
  * and returns JSON comments.
  */
 
+function err($str) {
+    return '[{ "line": 1, "column": 1, "endLine": 1, "endColumn": 1, "code": 0, "level": "error", "message": "' . $str . '"}]';
+}
+
 header('Content-type: application/json; charset=UTF-8');
 
 $script = $_POST["script"];
@@ -19,9 +23,14 @@ $process = proc_open("exec ./shellcheck.sh", $fds, $pipes);
 if(is_resource($process)) {
   fwrite($pipes[0], $script);
   fclose($pipes[0]);
-  echo stream_get_contents($pipes[1]);
+  $var = stream_get_contents($pipes[1]);
   fclose($pipes[1]);
-  proc_close($process);
+  $ret = proc_close($process);
+  if ($ret < 128 && $var != "") {
+    echo $var;
+  } else {
+    echo err("Sandbox resource constraints exceeded. Try a smaller script, or run ShellCheck locally.");
+  }
 } else { 
-  echo "[{ 'line': 1, 'column': 1, 'level': 'error', 'message': 'Oops, internal server error unrelated to your script! Sorry!'}]";
+  echo err("Oops, internal server error unrelated to your script! Sorry!");
 }

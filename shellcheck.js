@@ -54,8 +54,10 @@ function formatError(err) {
   header += "^-- ";
   
   nodes.push($("<span />").html(header));
-  nodes.push(getLink(err.code));
-  nodes.push(document.createTextNode(": "));
+  if (err.code > 0) {
+    nodes.push(getLink(err.code));
+    nodes.push(document.createTextNode(": "));
+  }
   nodes.push($("<span />").text(err.message));
   return $("<span />")
       .addClass(err.level)
