@@ -171,3 +171,15 @@ a.linelink {
   color: #8080FF;
   text-decoration: underline;
 }
+
+.didyoumean {
+  color: #F0F0F0;
+}
+
+.applyline {
+  font-size: 75%;
+}
+
+#autofix.disabledLink {
+  text-decoration: line-through;
+}

@@ -8,6 +8,7 @@
     <meta name="description" content="ShellCheck is an open source static anaylsis tool that automatically finds bugs in your shell scripts." />
     <script src="bugreport.js"></script>
     <script src="shellcheck.js"></script>
+    <script src="autofix.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -81,6 +82,8 @@ done
             <div class="menubar">
               <a class="titleitem" href="#" onclick="editor.setValue($('#demo').text(), 1);">Load an example</a>
               <div class="titleitem mainitem"></div>
+              <a id="autofix" class="titleitem miniitem disabledLink" href="javascript:applyAllFixes()">Apply fixes</a>
+              <span class="titleitem spaceitem"></span>
               <a class="titleitem miniitem" href="javascript:reportBug()">Report bug</a>
               <span class="titleitem spaceitem"></span>
               <a class="titleitem miniitem" href="javascript:alert('Are you on mobile and unable to paste in the editor? Paste in this plaintext box to have it copied over.')">Mobile paste:</a>
