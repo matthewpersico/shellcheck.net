@@ -230,10 +230,9 @@ function createTerminal(code, errors) {
         currentFixes.push(i);
       }
     }
-  }
-
-  if (fixer.hasModifications()) {
-    node.append(formatFix(fixer, errors, currentFixes));
+    if (fixer.hasModifications()) {
+      node.append(formatFix(fixer, errors, currentFixes));
+    }
   }
 
   node
