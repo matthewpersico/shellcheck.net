@@ -109,7 +109,7 @@ find backups/ \
       </div>
       <div id="github">
         <a href="https://github.com/koalaman/shellcheck">
-          <img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Logo.png" style="height: 1.5ex" alt="GitHub" /> ➯
+          <img src="GitHub_Logo.png" style="height: 1.5ex" alt="GitHub" /> ➯
         </a>
       </div>
     </div>
