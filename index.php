@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta property="og:image" content="shellcheck.png" />
     <meta property="og:description" content="ShellCheck finds bugs in your shell scripts" />
-    <meta name="description" content="ShellCheck is an open source static anaylsis tool that automatically finds bugs in your shell scripts." />
+    <meta name="description" content="ShellCheck is an open source static analysis tool that automatically finds bugs in your shell scripts." />
     <script src="bugreport.js"></script>
     <script src="shellcheck.js"></script>
     <script src="autofix.js"></script>
