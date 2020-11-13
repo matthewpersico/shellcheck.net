@@ -192,7 +192,10 @@ find backups/ \
         </div>
       </div>
       <div class="contentpart">
-        Sounds awesome? <a href="https://github.com/koalaman/shellcheck">Read more about it</a> on the <a href="https://github.com/koalaman/shellcheck">GitHub page</a>!
+        A special thanks to the <a href="https://github.com/sponsors/koalaman">GitHub Sponsors</a>:
+        <a href="https://github.com/benliddicott">benliddicott</a>
+        and
+        <a href="https://www.bashsupport.com/pro/">BashSupport Pro</a>
       </div>
     </div>
     <script src="libace/ace.js" type="text/javascript" charset="utf-8"></script>
