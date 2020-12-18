@@ -196,6 +196,7 @@ find backups/ \
         <a href="https://github.com/benliddicott">benliddicott</a>
         and
         <a href="https://www.bashsupport.com/pro/">BashSupport Pro</a>
+        &#8226; <a href="https://github.com/per1234">per1234</a>
       </div>
     </div>
     <script src="libace/ace.js" type="text/javascript" charset="utf-8"></script>
