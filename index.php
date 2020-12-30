@@ -195,9 +195,10 @@ find backups/ \
         A special thanks to the <a href="https://github.com/sponsors/koalaman">GitHub Sponsors</a>:
         <a href="https://github.com/benliddicott">benliddicott</a>,
         and
-        <a href="https://www.bashsupport.com/pro/">BashSupport Pro</a>
+        <a href="https://www.bashsupport.com/pro/">BashSupport Pro</a> <!-- jansorg -->
         &#8226; <a href="https://github.com/per1234">per1234</a>
         &#8226; <a href="https://github.com/WhitewaterFoundry">WhitewaterFoundry</a>
+        &#8226; <a href="https://github.com/reap2sow1">reap2sow1</a>
       </div>
     </div>
     <script src="libace/ace.js" type="text/javascript" charset="utf-8"></script>
