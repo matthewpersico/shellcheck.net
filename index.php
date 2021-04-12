@@ -199,6 +199,8 @@ find backups/ \
         &#8226; <a href="https://github.com/per1234">per1234</a>
         &#8226; <a href="https://github.com/WhitewaterFoundry">WhitewaterFoundry</a>
         &#8226; <a href="https://github.com/reap2sow1">reap2sow1</a>
+        &#8226; <a href="https://github.com/dcminter">dcminter</a>
+        &#8226; <a href="https://github.com/photostructure">photostructure</a>
       </div>
     </div>
     <script src="libace/ace.js" type="text/javascript" charset="utf-8"></script>
