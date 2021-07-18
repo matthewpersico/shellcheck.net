@@ -183,7 +183,7 @@ find backups/ \
         <div class="benefitblock">
           <ul>
             <li><a href="https://github.com/koalaman/shellcheck/blob/master/LICENSE">GPLv3</a>: free as in freedom</li>
-            <li>available on <a href="https://github.com/koalaman/shellcheck">GitHub</a></li>
+            <li>available on <a href="https://github.com/koalaman/shellcheck">GitHub</a> (as is <a href="https://github.com/koalaman/shellcheck.net">this website</a>)</li>
             <li>already packaged for your <a href="https://github.com/koalaman/shellcheck#user-content-installing">distro or package&nbsp;manager</a> </li>
             <li>supported as an <a href="https://github.com/koalaman/shellcheck#user-content-in-your-editor">integrated linter</a> in major&nbsp;editors</li>
             <li>available in <a href="https://codeclimate.com/">CodeClimate</a>, <a href="https://www.codacy.com/">Codacy</a> and <a href="https://www.codefactor.io/">CodeFactor</a> to auto-check your GitHub repo</li>
