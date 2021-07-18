@@ -50,8 +50,8 @@ function makeReportUrl(script, json) {
 
 function newIssueUrl(base, title, body) {
 	var url = base + "/issues/new?" +
-		"title=" + encodeURIComponent(title) +
-    "&body=" + encodeURIComponent(body) ;
+//		"title=" + encodeURIComponent(title) +
+                "body=" + encodeURIComponent(body) ;
   return url;
 }
 
