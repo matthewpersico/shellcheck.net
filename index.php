@@ -196,6 +196,7 @@ find backups/ \
 
         <a href="https://github.com/benliddicott">benliddicott</a>
         &#8226; <a href="https://gitpod.io">Gitpod</a>
+        &#8226; <a href="https://github.com/aniravi24">aniravi24</a>
 
         &#8226; <a href="https://github.com/per1234">per1234</a>
         &#8226; <a href="https://www.bashsupport.com/pro/">BashSupport Pro</a> <!-- jansorg -->
