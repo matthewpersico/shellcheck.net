@@ -56,7 +56,7 @@ function formatError(err) {
   nodes.push($("<span />").html(header));
   if (err.code > 0) {
     nodes.push(getLink(err.code));
-    nodes.push(document.createTextNode(": "));
+    nodes.push(document.createTextNode(" (" + err.level + "): "));
   }
   nodes.push($("<span />").text(err.message));
   return $("<span />")
