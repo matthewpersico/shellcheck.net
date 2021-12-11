@@ -207,6 +207,7 @@ find backups/ \
         &#8226; <a href="https://github.com/photostructure">photostructure</a>
         &#8226; <a href="https://cronitor.io">Cronitor</a>
         &#8226; <a href="https://github.com/devholic">devholic</a>
+        &#8226; <a href="https://github.com/qmacro">qmacro</a>
       </div>
     </div>
     <script src="libace/ace.js" type="text/javascript" charset="utf-8"></script>
