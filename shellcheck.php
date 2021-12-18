@@ -10,7 +10,7 @@ function err($str) {
 header('Content-type: application/json; charset=UTF-8');
 
 $script = $_POST["script"];
-if (get_magic_quotes_gpc()) {
+if (function_exists('get_magic_quotes_gpc') && get_magic_quotes_gpc()) {
     $script = stripslashes($script);
 }
 
