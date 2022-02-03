@@ -210,6 +210,7 @@ find backups/ \
         &#8226; <a href="https://github.com/qmacro">qmacro</a>
         &#8226; <a href="https://github.com/pystardust/ani-cli">ani-cli</a>
         &#8226; <a href="https://codiga.io/">codiga.io</a>
+        &#8226; <a href="https://SnapShooter.com">SnapShooter Backups</a>
       </div>
     </div>
     <script src="libace/ace.js" type="text/javascript" charset="utf-8"></script>
