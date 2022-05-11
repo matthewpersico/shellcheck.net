@@ -27,7 +27,7 @@ function shellcheckCode(code, callback) {
 
 function getLink(code) {
   return $("<a />")
-    .attr("href", "https://github.com/koalaman/shellcheck/wiki/SC" + code)
+    .attr("href", "https://www.shellcheck.net/wiki/SC" + code)
     .attr("target", "_blank")
     .attr("class", "wikilink")
     .text("SC" + code);

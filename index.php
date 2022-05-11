@@ -213,6 +213,7 @@ find backups/ \
         &#8226; <a href="https://SnapShooter.com">SnapShooter Backups</a>
       </div>
     </div>
+    <p style="display: none"><a href="/wiki/">Wiki Sitemap</a></p>
     <script src="libace/ace.js" type="text/javascript" charset="utf-8"></script>
     <script>
       var editor = ace.edit("input");
